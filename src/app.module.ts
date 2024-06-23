@@ -14,7 +14,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: process.env.MONGO_URI,
+        uri: 'mongodb://mongo:27017/nest',
         connectionFactory: (connection) => {
           connection.on('error', (err) => {
             console.error(`MongoDB connection error: ${err.message}`);
