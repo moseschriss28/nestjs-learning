@@ -12,9 +12,17 @@ import { MongooseModule } from '@nestjs/mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(
-      'mongodb://mongo:27017/nest',
-    ),
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: process.env.MONGO_URI,
+        connectionFactory: (connection) => {
+          connection.on('error', (err) => {
+            console.error(`MongoDB connection error: ${err.message}`);
+          });
+          return connection;
+        },
+      }),
+    }),
     UserModule, 
     AuthModule,
     SharedModule
