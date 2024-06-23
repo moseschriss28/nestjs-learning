@@ -13,7 +13,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       isGlobal: true,
     }),
     MongooseModule.forRoot(
-      'http://localhost:27017/users',
+      'mongodb://mongo:27017/users',
     ),
     UserModule, 
     AuthModule,
