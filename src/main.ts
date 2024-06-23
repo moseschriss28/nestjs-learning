@@ -13,3 +13,4 @@ bootstrap();
 /// RABBITMQ
 /// KAFKA
 /// WEBSOCKETS
+/// REDIS
