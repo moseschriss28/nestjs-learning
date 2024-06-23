@@ -5,10 +5,10 @@ import { UserSchema } from './entities/user.schema';
 @Module({
   imports: [
     MongooseModule.forFeature([
-      {
-        name: 'User',
-        schema: UserSchema,
-      },
+      // {
+      //   name: 'User',
+      //   schema: UserSchema,
+      // },
     ]),
   ],
   providers: [],

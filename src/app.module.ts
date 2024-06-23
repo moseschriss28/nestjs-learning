@@ -12,9 +12,9 @@ import { MongooseModule } from '@nestjs/mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(
-      'mongodb://mongo:27017/users',
-    ),
+    // MongooseModule.forRoot(
+    //   'mongodb://mongo:27017/users',
+    // ),
     UserModule, 
     AuthModule,
     SharedModule
